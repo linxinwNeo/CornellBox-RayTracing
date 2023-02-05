@@ -14,8 +14,17 @@ SOURCES += \
     openglwindow.cpp
 
 HEADERS += \
+    Camera.h \
+    Hittable.h \
+    Hittable_List.h \
+    Material.h \
+    Ray.h \
+    Sphere.h \
+    color.h \
     mainwindow.h \
-    openglwindow.h
+    openglwindow.h \
+    rtweekend.h \
+    vec3.h
 
 FORMS += \
     mainwindow.ui
