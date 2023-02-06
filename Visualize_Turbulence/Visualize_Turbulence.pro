@@ -14,16 +14,26 @@ SOURCES += \
     openglwindow.cpp
 
 HEADERS += \
+    AABB.h \
+    BVH.h \
+    Box.h \
     Camera.h \
     Hittable.h \
     Hittable_List.h \
     Material.h \
+    Moving_Sphere.h \
+    Perlin.h \
     Ray.h \
+    Rtweekend_stb_image.h \
     Sphere.h \
+    aarect.h \
     color.h \
+    constant_medium.h \
     mainwindow.h \
     openglwindow.h \
     rtweekend.h \
+    stb_image.h \
+    texture.h \
     vec3.h
 
 FORMS += \
