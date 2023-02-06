@@ -331,8 +331,8 @@ void output_PPM(){
         case 6:
             world = cornell_box();
             aspect_ratio = 1.0;
-            image_width = 800;
-            samples_per_pixel = 1000;
+            image_width = 3000;
+            samples_per_pixel = 25;
             background = Color(0,0,0);
             lookfrom = Point3(278, 278, -800);
             lookat = Point3(278, 278, 0);
