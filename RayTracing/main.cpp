@@ -286,7 +286,7 @@ void output_PPM(){
     auto aperture = 0.0;
     Color background(0,0,0);
 
-    switch (1) {
+    switch (4) {
         case 1:
             world = cornell_smoke();
             aspect_ratio = 1.0;
