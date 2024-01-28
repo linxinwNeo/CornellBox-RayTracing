@@ -4,7 +4,6 @@
 #include "Moving_Sphere.h"
 #include "aarect.h"
 #include "constant_medium.h"
-#include "mainwindow.h"
 
 #include "Camera.h"
 #include "Ray.h"
@@ -16,6 +15,9 @@
 #include "Sphere.h"
 #include "Material.h"
 #include "box.h"
+
+// specify output's path here
+const QString output_filename = "./result.ppm";
 
 class material;
 
@@ -264,6 +266,7 @@ hittable_list final_scene() {
 
     return objects;
 }
+
 void output_PPM(){
     qDebug() << "start outputing ppm file!";
 
@@ -359,7 +362,7 @@ void output_PPM(){
     camera cam(lookfrom, lookat, vup, vfov, aspect_ratio, aperture, dist_to_focus, 0.0, 1.0);
 
     // render
-    const QString filename = "/Users/linxinw/Desktop/gradient.ppm";
+    const QString filename = output_filename;
     QFile file(filename);
     if (!file.open(QIODevice::WriteOnly | QIODevice::Truncate | QIODevice::Text)) {
         qDebug() << "Couldn't open the file " << filename;
@@ -367,7 +370,7 @@ void output_PPM(){
     }
 
     QTextStream stream(&file);
-    stream<<"P3\n" << image_width<< " " << image_height << "\n255\n";
+    stream << "P3\n" << image_width << " " << image_height << "\n255\n";
     for ( int j = image_height-1; j >= 0; --j ) {
         for ( int i = 0; i < image_width; ++i ) {
             Color pixel_color(0, 0, 0);
@@ -393,10 +396,7 @@ int main(int argc, char *argv[])
 
     output_PPM();
 
-    exit(0);
-    MainWindow w;
-    w.show();
 
-    return a.exec();
+    return 0;
 }
 

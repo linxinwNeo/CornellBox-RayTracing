@@ -9,9 +9,7 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    main.cpp \
-    mainwindow.cpp \
-    openglwindow.cpp
+    main.cpp
 
 HEADERS += \
     AABB.h \
@@ -29,24 +27,16 @@ HEADERS += \
     aarect.h \
     color.h \
     constant_medium.h \
-    mainwindow.h \
-    openglwindow.h \
     rtweekend.h \
     stb_image.h \
     texture.h \
     vec3.h
 
-FORMS += \
-    mainwindow.ui
+FORMS +=
 
-mac: LIBS += -framework GLUT
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
-DISTFILES +=
-
-RESOURCES += \
-    res.qrc
